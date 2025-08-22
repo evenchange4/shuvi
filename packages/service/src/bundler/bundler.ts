@@ -29,7 +29,7 @@ import { IPluginContext } from '../core';
 import { isFatalError } from '../error';
 import { Target, TargetChain } from '../core/plugin';
 import { createWebpackConfig, IWebpackConfigOptions } from './config';
-import { runCompiler, BundlerResult, generateStats } from './runCompiler';
+import { runCompiler, BundlerResult } from './runCompiler';
 import { CLIENT_OUTPUT_DIR } from '../constants';
 import { setupTypeScript } from './typescript';
 import { WatchingProxy, Watching } from './watchingProxy';

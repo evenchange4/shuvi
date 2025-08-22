@@ -7,7 +7,7 @@ export type BundlerResult = {
   warnings: Rspack.StatsError[];
 };
 
-export function generateStats(result: BundlerResult, stat: Stats): BundlerResult {
+function generateStats(result: BundlerResult, stat: Stats): BundlerResult {
   const { errors, warnings } = stat.toJson({
     all: false,
     warnings: true,
