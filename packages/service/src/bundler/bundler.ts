@@ -185,11 +185,6 @@ class RspackBundler implements Bundler {
         if (error) {
           throw error;
         }
-        const result = multiStats?.stats.reduce(generateStats, {
-          errors: [],
-          warnings: []
-        });
-        console.log(result);
       }
     );
     this._watching.set(rspackWatching);
