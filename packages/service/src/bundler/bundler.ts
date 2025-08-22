@@ -29,7 +29,7 @@ import { IPluginContext } from '../core';
 import { isFatalError } from '../error';
 import { Target, TargetChain } from '../core/plugin';
 import { createWebpackConfig, IWebpackConfigOptions } from './config';
-import { runCompiler, BundlerResult } from './runCompiler';
+import { runCompiler, BundlerResult, generateStats } from './runCompiler';
 import { CLIENT_OUTPUT_DIR } from '../constants';
 import { setupTypeScript } from './typescript';
 import { WatchingProxy, Watching } from './watchingProxy';
@@ -181,8 +181,15 @@ class RspackBundler implements Bundler {
 
     const rspackWatching = this._compiler.watch(
       this._compiler.compilers[0].options.watchOptions || {},
-      () => {
-        // do nothing
+      (error, multiStats) => {
+        if (error) {
+          throw error;
+        }
+        const result = multiStats?.stats.reduce(generateStats, {
+          errors: [],
+          warnings: []
+        });
+        console.log(result);
       }
     );
     this._watching.set(rspackWatching);
