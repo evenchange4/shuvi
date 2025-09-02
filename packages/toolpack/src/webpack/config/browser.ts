@@ -201,7 +201,8 @@ export function createBrowserWebpackChain(options: BaseOptions): WebpackChain {
     crypto: require.resolve('crypto-browserify'),
     path: require.resolve('path-browserify'),
     stream: require.resolve('stream-browserify'),
-    vm: require.resolve('vm-browserify')
+    vm: require.resolve('vm-browserify'),
+    fs: false
   });
 
   chain.plugin('node-buffer-polyfill').use(webpack.ProvidePlugin, [
