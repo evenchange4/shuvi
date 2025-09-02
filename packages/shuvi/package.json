@@ -1,6 +1,6 @@
 {
   "name": "shuvi",
-  "version": "1.0.54",
+  "version": "2.0.0-dev.10",
   "description": "Full Stack Web development framework.",
   "repository": {
     "type": "git",
@@ -18,9 +18,9 @@
     "lib"
   ],
   "scripts": {
-    "dev": "tsc -p tsconfig.build.json -m commonjs -w",
+    "dev": "tsc -p tsconfig.build.json -w",
     "prebuild": "rimraf lib",
-    "build": "tsc -p tsconfig.build.json -m commonjs"
+    "build": "tsc -p tsconfig.build.json"
   },
   "engines": {
     "node": ">= 16.0.0"
@@ -30,13 +30,13 @@
     "find-up": "4.1.0",
     "semver": "7.3.2",
     "cli-select": "1.1.2",
-    "@shuvi/platform-shared": "1.0.54",
-    "@shuvi/platform-web": "1.0.54",
-    "@shuvi/service": "1.0.54",
-    "@shuvi/shared": "1.0.54",
-    "@shuvi/toolpack": "1.0.54",
-    "@shuvi/utils": "1.0.54",
-    "@shuvi/reporters": "1.0.54",
+    "@shuvi/platform-shared": "2.0.0-dev.10",
+    "@shuvi/platform-web": "2.0.0-dev.10",
+    "@shuvi/service": "2.0.0-dev.10",
+    "@shuvi/shared": "2.0.0-dev.10",
+    "@shuvi/toolpack": "2.0.0-dev.10",
+    "@shuvi/utils": "2.0.0-dev.10",
+    "@shuvi/reporters": "2.0.0-dev.10",
     "cli-highlight": "^2.1.9",
     "commander": "10.0.0",
     "cross-spawn": "7.0.3",

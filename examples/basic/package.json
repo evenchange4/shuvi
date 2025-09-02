@@ -3,16 +3,19 @@
   "name": "example-basic",
   "scripts": {
     "dev": "shuvi dev",
-    "build": "shuvi build",
-    "start": "shuvi start"
+    "build": "shuvi build && npm run lint",
+    "start": "shuvi serve",
+    "lint": "shuvi lint"
   },
   "dependencies": {
+    "@shuvi/package-esmodule": "workspace:*",
     "shuvi": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^18.6.1",
     "@types/react": "18.0.9",
     "@types/react-dom": "18.0.6",
-    "typescript": "^4.7.4"
+    "eslint-config-shuvi": "workspace:*",
+    "typescript": "^5.5.2"
   }
 }

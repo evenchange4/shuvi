@@ -1,6 +1,6 @@
 {
   "name": "@shuvi/router",
-  "version": "1.0.54",
+  "version": "2.0.0-dev.10",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shuvijs/shuvi.git",
@@ -17,18 +17,18 @@
   ],
   "scripts": {
     "dev": "run-p watch:*",
-    "watch:esm": "tsc -p tsconfig.build.json -m esnext --outDir esm -w",
-    "watch:cjs": "tsc -p tsconfig.build.json -m commonjs --outDir lib -w",
+    "watch:esm": "tsc -p tsconfig.build.esm.json -w",
+    "watch:cjs": "tsc -p tsconfig.build.cjs.json -w",
     "prebuild": "rimraf lib esm",
     "build": "run-p build:*",
-    "build:esm": "tsc -p tsconfig.build.json -m esnext --outDir esm",
-    "build:cjs": "tsc -p tsconfig.build.json -m commonjs --outDir lib"
+    "build:esm": "tsc -p tsconfig.build.esm.json",
+    "build:cjs": "tsc -p tsconfig.build.cjs.json"
   },
   "engines": {
     "node": ">= 16.0.0"
   },
   "dependencies": {
-    "@shuvi/utils": "1.0.54",
+    "@shuvi/utils": "2.0.0-dev.10",
     "query-string": "6.13.8"
   }
 }

@@ -1,3 +1,4 @@
+import { performance } from 'perf_hooks';
 import { Command } from 'commander';
 import * as path from 'path';
 import { createShuviServer } from '@shuvi/service';
@@ -39,6 +40,7 @@ async function devAction(dir: string, options: DevOptions) {
   const configFile = options.config && path.resolve(cwd, options.config);
   const config = await getConfigFromCli(options);
 
+  process.env.DEV_SERVER = `${host}:${port}`;
   const api = await initShuvi({
     cwd,
     config,

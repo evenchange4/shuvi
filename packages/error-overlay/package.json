@@ -1,6 +1,6 @@
 {
   "name": "@shuvi/error-overlay",
-  "version": "1.0.54",
+  "version": "2.0.0-dev.10",
   "main": "umd/index.js",
   "types": "lib/index.d.ts",
   "files": [
@@ -10,12 +10,12 @@
   "scripts": {
     "dev": "run-p watch:*",
     "watch:iframe": "cross-env NODE_ENV=development rollup -c rollup.config.iframe.js -w",
-    "watch:cjs": "tsc -p tsconfig.build.json -m commonjs --outDir lib -w",
+    "watch:cjs": "tsc -p tsconfig.build.cjs.json -w",
     "watch:umd": "cross-env NODE_ENV=development rollup -c rollup.config.js -w",
     "prebuild": "rimraf lib",
     "build": "pnpm run iframe-prod && run-p build:*",
     "iframe-prod": "cross-env NODE_ENV=production rollup -c rollup.config.iframe.js",
-    "build:cjs": "tsc -p tsconfig.build.json -m commonjs --outDir lib",
+    "build:cjs": "tsc -p tsconfig.build.cjs.json",
     "build:umd": "cross-env NODE_ENV=production rollup -c rollup.config.js"
   },
   "engines": {
@@ -23,8 +23,8 @@
   },
   "dependencies": {
     "@babel/code-frame": "7.14.5",
-    "@shuvi/shared": "1.0.54",
-    "@shuvi/toolpack": "1.0.54",
+    "@shuvi/shared": "2.0.0-dev.10",
+    "@shuvi/toolpack": "2.0.0-dev.10",
     "anser": "1.4.9",
     "data-uri-to-buffer": "3.0.1",
     "html-entities": "2.3.2",
