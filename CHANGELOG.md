@@ -1,3 +1,21 @@
+# [2.0.0-dev.11](https://github.com/shuvijs/shuvi/compare/v2.0.0-dev.10...v2.0.0-dev.11) (2025-09-02)
+
+
+### Bug Fixes
+
+* adjust webpack magic comment order to show `${fileName}-${id}` ([#9](https://github.com/shuvijs/shuvi/issues/9)) ([afd2ab3](https://github.com/shuvijs/shuvi/commit/afd2ab304a2d89e0aa3510b6b606de659356ff0b))
+
+
+
+# [2.0.0-dev.10](https://github.com/shuvijs/shuvi/compare/v2.0.0-dev.9...v2.0.0-dev.10) (2025-08-23)
+
+
+### Bug Fixes
+
+* stdout error in watch mode ([#8](https://github.com/shuvijs/shuvi/issues/8)) ([dd43e0b](https://github.com/shuvijs/shuvi/commit/dd43e0b66f9256a4fba788ee45f6c77c478272d7))
+
+
+
 # [2.0.0-dev.9](https://github.com/shuvijs/shuvi/compare/v2.0.0-dev.7...v2.0.0-dev.9) (2025-08-13)
 
 
