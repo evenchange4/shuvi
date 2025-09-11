@@ -261,11 +261,10 @@ class RspackBundler implements Bundler {
           errors.push(...(statsData.errors || []));
         });
         if (warnings.length > 0) {
-          console.warn('warnings', warnings)
+          console.warn('warnings', warnings);
         }
         if (errors.length > 0) {
-          console.log('errors', errors)
-          process.exit(1)
+          console.log('errors', errors);
         }
         const isSuccessful = !warnings.length && !errors.length;
         if (isSuccessful) {
