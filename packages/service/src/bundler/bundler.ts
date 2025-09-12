@@ -265,6 +265,7 @@ class RspackBundler implements Bundler {
         }
         if (errors.length > 0) {
           console.log('errors', errors);
+          process.exit(1);
         }
         const isSuccessful = !warnings.length && !errors.length;
         if (isSuccessful) {
