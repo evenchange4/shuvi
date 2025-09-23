@@ -169,7 +169,7 @@ export function baseRspackChain({
     // config.optimization.minimizer('terser').use(TerserPlugin, [ ... ]);
     // config.optimization.minimizer('cssMinimizer').use(CssMinimizerPlugin, [ ... ]);
 
-    if (analyze) {
+    if (analyze && name === 'shuvi/client') {
       const targetName = getSimplifiedTargetName(name);
       config
         .plugin('private/bundle-analyzer-plugin')
