@@ -1,3 +1,21 @@
+# [2.0.0-dev.16](https://github.com/shuvijs/shuvi/compare/v2.0.0-dev.15...v2.0.0-dev.16) (2025-09-19)
+
+
+### Features
+
+* rspack use filesystem cache ([#18](https://github.com/shuvijs/shuvi/issues/18)) ([6fd0cb0](https://github.com/shuvijs/shuvi/commit/6fd0cb0c2da540849e603648694c1fd1e16b95d1))
+
+
+
+# [2.0.0-dev.15](https://github.com/shuvijs/shuvi/compare/v2.0.0-dev.14...v2.0.0-dev.15) (2025-09-18)
+
+
+### Bug Fixes
+
+* only exit process in production ([#17](https://github.com/shuvijs/shuvi/issues/17)) ([2b84c28](https://github.com/shuvijs/shuvi/commit/2b84c2825e6d81d8b0d9ec75c133787358332ee4))
+
+
+
 # [2.0.0-dev.14](https://github.com/shuvijs/shuvi/compare/v2.0.0-dev.13...v2.0.0-dev.14) (2025-09-18)
 
 
