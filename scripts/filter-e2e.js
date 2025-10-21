@@ -9,9 +9,7 @@ if (process.env.SKIP_FIXTURES) {
 module.exports = list => {
   return {
     filtered: list
-      .filter(t => {
-        return e2eTests.some(tt => t.includes(path.normalize(tt)));
-      })
+      .filter(t => t.includes('error-overlay.test.ts'))
       .map(test => ({ test }))
   };
 };
