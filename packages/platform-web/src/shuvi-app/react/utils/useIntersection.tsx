@@ -72,6 +72,17 @@ export default function useIntersection<T extends Element>({
   useEffect(() => {
     if (rootRef) setRoot(rootRef.current);
   }, [rootRef]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (unobserve.current) {
+        unobserve.current();
+        unobserve.current = undefined;
+      }
+    };
+  }, []);
+
   return [setRef, visible, resetVisible];
 }
 
