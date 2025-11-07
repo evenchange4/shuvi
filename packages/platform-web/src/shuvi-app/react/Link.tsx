@@ -96,7 +96,11 @@ export const Link = function LinkWithPrefetch({
 
   const setRef = React.useCallback(
     async (el: HTMLAnchorElement | null) => {
-      if (!el) return;
+      // Handle unmount: cleanup IntersectionObserver
+      if (!el) {
+        setIntersectionRef(null);
+        return;
+      }
 
       if (shouldAutoPrefetch) {
         /**
@@ -105,7 +109,7 @@ export const Link = function LinkWithPrefetch({
         await awaitPageLoadAndIdle({ remainingTime: 49, timeout: 10 * 1000 });
 
         // Check if component is still mounted after async operation
-        if (!isMountedRef.current) return;
+        if (!isMountedRef.current || !el.isConnected) return;
 
         // Before the link getting observed, check if visible state need to be reset
         if (isHrefValid && previousHref.current !== to) {
