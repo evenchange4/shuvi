@@ -255,7 +255,7 @@ class RspackBundler implements Bundler {
           warnings.push(...(statsData.warnings || []));
           errors.push(...(statsData.errors || []));
         });
-        if (warnings.length > 0 && process.env.NODE_ENV === 'development') {
+        if (warnings.length > 0 && process.env.NODE_ENV === 'production') {
           warnings.forEach(warning => {
             console.warn('warning message', warning.message);
             console.warn('warning file', warning.file);
