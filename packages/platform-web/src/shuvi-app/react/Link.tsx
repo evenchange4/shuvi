@@ -71,7 +71,8 @@ const isAbsoluteUrl = (url: string) => {
   return ABSOLUTE_URL_REGEX.test(url);
 };
 
-export const Link = function LinkWithPrefetch({
+// Internal component with prefetch logic (contains hooks)
+const LinkWithPrefetch = function ({
   to,
   ref,
   prefetch,
@@ -155,7 +156,24 @@ export const Link = function LinkWithPrefetch({
   return <LinkFromRouterReact to={to} {...rest} {...childProps} />;
 };
 
+// Wrapper component (no hooks, safe to return early)
+export const Link = function ({ prefetch, ...rest }: LinkWrapperProps) {
+  // When prefetch is "none", completely disable all prefetching (auto + hover)
+  if (prefetch === 'none') {
+    return <LinkFromRouterReact {...rest} />;
+  }
+
+  // Otherwise use the full prefetch logic
+  return <LinkWithPrefetch prefetch={prefetch} {...rest} />;
+};
+
 interface LinkWrapperProps extends LinkProps {
-  prefetch?: boolean;
+  /**
+   * Controls link prefetching behavior:
+   * - `undefined` or `true`: Auto prefetch when visible + hover prefetch (default)
+   * - `false`: Disable auto prefetch, only prefetch on hover
+   * - `'none'`: Completely disable all prefetching (no auto, no hover)
+   */
+  prefetch?: boolean | 'none';
   ref?: any;
 }
