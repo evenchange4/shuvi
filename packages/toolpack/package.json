@@ -74,6 +74,7 @@
     "ts-checker-rspack-plugin": "1.1.4",
     "typescript": "5.5.2",
     "vm-browserify": "1.1.2",
+    "webpack": "5.73.0",
     "webpack-bundle-analyzer": "4.3.0",
     "webpack-chain": "6.5.1",
     "webpack-sources": "2.2.0",
@@ -85,7 +86,6 @@
     "@types/loader-utils": "2.0.1",
     "@types/mini-css-extract-plugin": "^1.2.2",
     "@types/webpack-bundle-analyzer": "^3.8.0",
-    "memfs": "3.1.2",
-    "webpack": "5.73.0"
+    "memfs": "3.1.2"
   }
 }
